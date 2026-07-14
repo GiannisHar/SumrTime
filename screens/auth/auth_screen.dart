@@ -153,7 +153,8 @@ class _AuthScreenState extends State<AuthScreen>
 
           // ── Content ───────────────────────────────────────────────────
           SafeArea(
-            child: SingleChildScrollView(
+            child: Center(
+              child: SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(24, 16, 24, 40),
               child: Column(
                 children: [
@@ -206,6 +207,7 @@ class _AuthScreenState extends State<AuthScreen>
 
                   // ── Auth card ─────────────────────────────────────────
                   Container(
+                    width: 400,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(24),
@@ -285,8 +287,11 @@ class _AuthScreenState extends State<AuthScreen>
                             ),
                           ),
 
-                        SizedBox(
-                          height: _tabs.index == 0 ? 280 : 340,
+                        AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                          width: 400,
+                          height: _tabs.index == 0 ? 220 : 280,
                           child: TabBarView(
                             controller: _tabs,
                             children: [
@@ -304,6 +309,7 @@ class _AuthScreenState extends State<AuthScreen>
                   GestureDetector(
                     onTap: _openStaffLogin,
                     child: Container(
+                      width: 400,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 14),
                       decoration: BoxDecoration(
@@ -333,7 +339,7 @@ class _AuthScreenState extends State<AuthScreen>
                   ),
                   const SizedBox(height: 16),
                 ],
-              ),
+              ),),
             ),
           ),
         ],
@@ -343,7 +349,8 @@ class _AuthScreenState extends State<AuthScreen>
 
   // ── Login form ─────────────────────────────────────────────────────────────
   Widget _loginForm() {
-    return Padding(
+    return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(20, 16, 20, 20),
       child: Form(
         key: _loginFormKey,
@@ -407,7 +414,8 @@ class _AuthScreenState extends State<AuthScreen>
 
   // ── Register form ──────────────────────────────────────────────────────────
   Widget _registerForm() {
-    return Padding(
+    return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(20, 16, 20, 20),
       child: Form(
         key: _registerFormKey,
