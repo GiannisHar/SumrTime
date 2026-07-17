@@ -1,0 +1,68 @@
+name: sumr_time
+description: Beach Bar Management App
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP
+  http: ^1.2.1
+
+  # Real-time
+  socket_io_client: ^2.0.3+1
+
+  # State management
+  provider: ^6.1.2
+
+  # QR code display
+  qr_flutter: ^4.1.0
+
+  # Image picking (logo, bg image)
+  image_picker: ^1.2.3
+
+  # Secure token storage
+  flutter_secure_storage: ^9.2.2
+
+  # Location
+  geolocator: ^12.0.0
+
+  # Google fonts
+  google_fonts: ^6.2.1
+
+  app_links: ^6.3.0
+
+  # Utils
+  uuid: ^4.4.0
+  share_plus: ^12.0.2
+  flutter_archive: ^6.0.4
+  archive: ^4.0.9
+  url_launcher: ^6.3.2
+  flutter_compass: ^0.8.1
+  sunmi_printer_plus: ^4.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/nikos.png"
+
+  # Optional but recommended for Android adaptive icons
+  adaptive_icon_background: "#439CFD"
+  adaptive_icon_foreground: "assets/icons/nikos.png"
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/nikos.png
